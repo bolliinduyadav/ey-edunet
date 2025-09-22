@@ -1,0 +1,33 @@
+.container{
+    display:flex;
+    /* flex-direction: row; */
+    /* flex-direction: row-reverse ; */
+    /* flex-direction: column-reverse; */
+    /* flex-direction: column; */
+    /* justify-content: flex start; */
+    /* justify-content: flex end; */
+    /* justify-content: center; */
+    /* justify-content: space-between; */
+    /* justify-content: space around; */
+    /* justify-content: space space-evenly; */
+    column-gap:3em;
+    border:10px solid black;
+    height:90vh;
+    align-
+
+}
+.box{
+    width:150px;
+    height: 150px;
+}
+#box1{
+    background-color: tomato;
+}
+#box2{
+    background-color: pink;
+}
+#box3{
+    background-color: red;
+}
+#box4{
+    background-color:yellow;

@@ -1,0 +1,16 @@
+anim{
+    width:100px;
+    height:100px;
+    background-color: red;
+    transition: width 2s;
+}
+p{
+    background-color: orange;
+}
+.image{
+    background-color: aquamarine;
+    background-repeat: repeat;
+    background-position: left;
+    background-size: 30px;
+    font-style:bold;
+}

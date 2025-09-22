@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+  <style>
+    button {
+      width: 40px;
+      height: 40px;
+      margin: 2px;
+      font-size: 16px;
+    }
+    input {
+      width: 120px;
+      margin-bottom: 10px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple Calculator</h2>
+
+  <!-- Input boxes -->
+  <input type="text" id="num1" readonly placeholder="First number">
+  <input type="text" id="num2" readonly placeholder="Second number">
+  <br><br>
+
+  <!-- Number buttons -->
+  <div>
+    <button onclick="enterNumber(1)">1</button>
+    <button onclick="enterNumber(2)">2</button>
+    <button onclick="enterNumber(3)">3</button>
+    <br>
+    <button onclick="enterNumber(4)">4</button>
+    <button onclick="enterNumber(5)">5</button>
+    <button onclick="enterNumber(6)">6</button>
+    <br>
+    <button onclick="enterNumber(7)">7</button>
+    <button onclick="enterNumber(8)">8</button>
+    <button onclick="enterNumber(9)">9</button>
+    <br>
+    <button onclick="enterNumber(0)">0</button>
+  </div>
+
+  <br>
+
+  <!-- Operation buttons -->
+  <button onclick="calculate('add')">+</button>
+  <button onclick="calculate('sub')">-</button>
+  <button onclick="calculate('mul')">*</button>
+  <button onclick="calculate('div')">/</button>
+
+  <p id="result"></p>
+
+  <script>
+    let currentBox = "num1"; // start with first input
+
+    // When number button is clicked
+    function enterNumber(num) {
+      document.getElementById(currentBox).value += num;
+    }
+
+    // Switch to second box after first number filled
+    document.getElementById("num1").addEventListener("focus", () => currentBox = "num1");
+    document.getElementById("num2").addEventListener("focus", () => currentBox = "num2");
+
+    // Calculation
+    function calculate(op) {
+      let n1 = Number(document.getElementById("num1").value);
+      let n2 = Number(document.getElementById("num2").value);
+      let result;
+
+      if (op === "add") result = n1 + n2;
+      if (op === "sub") result = n1 - n2;
+      if (op === "mul") result = n1 * n2;
+      if (op === "div") {
+        result = n2 === 0 ? "Cannot divide by 0" : n1 / n2;
+      }
+
+      document.getElementById("result").innerText = "Result = " + result;
+    }
+  </script>
+
+</body>
+</html>
